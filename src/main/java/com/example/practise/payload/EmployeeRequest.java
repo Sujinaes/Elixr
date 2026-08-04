@@ -1,35 +1,24 @@
 package com.example.practise.payload;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class EmployeeRequest {
+    @NotNull(message = "Id should not be null")
+    @Min(value=1 , message=" Id must be greater than 1")
+    @Positive(message = "Id must be greater than zero")
+    private Integer id;
 
-    private int id;
+    @NotBlank(message = "Name is required")
+    @Pattern(regexp = "^[A-Za-z ]+$", message = "No numbers allowed in name")
     private String name;
-    private int salary;
+
+    @NotNull(message = "Salary cannot be null")
+    @Positive(message = "Salary must be greater than 0")
+    private Integer salary;
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getName() {
-        return name;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
 }

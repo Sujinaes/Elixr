@@ -1,40 +1,18 @@
 package com.example.practise.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-
+import lombok.NoArgsConstructor;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 
 public class EmployeeModel {
-    private int id;
+    private Integer id;
     private String name;
-    private int salary;
-    public EmployeeModel(){
-        this.id=id;
-        this.name=name;
-        this.salary=salary;
-    }
+    private Integer salary;
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-}
+   }

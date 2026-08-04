@@ -7,8 +7,15 @@ import com.example.practise.response.EmployeeResponse;
 import java.util.List;
 
 public interface EmployeeService {
+
     List<EmployeeModel> getEmployees();
     EmployeeResponse createEmployee(EmployeeRequest request);
-    EmployeeResponse updateEmployee(int id, EmployeeRequest request);
-    void deleteEmployee(int id);
+    EmployeeResponse updateEmployee(Integer id, EmployeeRequest request);
+    EmployeeResponse deleteEmployee(Integer id);
+    EmployeeResponse patchEmployee(Integer id,EmployeeRequest request);
+    EmployeeResponse getbyId(Integer id);
+
+
+
+
 }
